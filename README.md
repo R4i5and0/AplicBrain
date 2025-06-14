@@ -1,76 +1,25 @@
+🧠 Mente Ativa, Universo Infinito | Projeto Web Full-Stack com Java
 
---         SCRIPT DE CRIAÇÃO DO BANCO DE DADOS 'brain'               --
---         Versão Final: Organizada e Pronta para Uso                --
+Este projeto é uma aplicação web completa desenvolvida como um trabalho prático para a disciplina de Programação Web. Trata-se de uma plataforma interativa onde usuários podem se cadastrar, fazer login e sugerir filmes, enquanto um perfil de administrador gerencia todo o conteúdo.✨
 
+O diferencial do projeto é o seu conceito criativo, que utiliza uma estética "dreamcore" e cósmica para explorar a relação entre a arte cinematográfica e a neurociência.
 
--- Apaga o banco de dados antigo se ele existir, para começar do zero.
-DROP DATABASE IF EXISTS brain;
+Principais Funcionalidades:
 
--- Cria o novo banco de dados.
-CREATE DATABASE brain;
+Sistema de autenticação com dois níveis de permissão (Admin e Usuário).
 
--- Seleciona o banco de dados que vamos usar.
-USE brain;
+Operações CRUD completas para o gerenciamento de filmes.
 
+Visualização dinâmica de capas de trailers a partir de links do YouTube.
 
+Interface responsiva e temática.
 
---                      CRIAÇÃO DAS TABELAS                         
+Stack Tecnológico:🚀
 
+Backend: Java (Jakarta EE), Servlets, JSP, JDBC
 
--- Tabela de Usuários: Armazena informações de login.
-CREATE TABLE usuarios (
-  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  -- A senha será armazenada como um hash (SHA-256).
-  senha VARCHAR(255) NOT NULL,
-  -- O tipo de usuário (admin tem superpoderes).
-  tipo ENUM('admin', 'comum') NOT NULL DEFAULT 'comum'  
-);
+Frontend: HTML5, CSS3, JavaScript, Bootstrap 5
 
+Banco de Dados: MySQL
 
--- Tabela de Filmes: Armazena os filmes sugeridos pelo admin e usuários.
-CREATE TABLE filmes (
-  id_filme INT AUTO_INCREMENT PRIMARY KEY,
-  nome_filme VARCHAR(255) NOT NULL,
-  genero VARCHAR(100) NOT NULL,
-  nota DOUBLE,
-  descricao TEXT,
-  -- Coluna para o link do trailer do YouTube.
-  trailer_link VARCHAR(255),
-  -- Chave estrangeira que conecta o filme ao usuário que o cadastrou.
-  usuario_id INT,
-  FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario) ON DELETE SET NULL
-  -- ON DELETE SET NULL: Se um usuário for deletado, os filmes dele não são apagados,
-  -- apenas perdem a referência, o que evita erros.
-);
-
-
-INSERT INTO usuarios (nome, email, senha, tipo)
-VALUES ('Administrador', 'admin@admin.com', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=' , 'admin');
-
-select * from usuarios;
-select * from filmes;
-
---Listar usuários e quantos filmes cada um cadastrou
-SELECT u.nome AS nome_usuario, COUNT(f.id_filme) AS total_filmes
-FROM usuarios u
-LEFT JOIN filmes f ON u.id_usuario = f.usuario_id
-GROUP BY u.id_usuario, u.nome;
-
-SELECT f.*, u.nome AS nome_usuario
-FROM filmes f
-LEFT JOIN usuarios u ON f.usuario_id = u.id_usuario;
-
-
-
-
-SELECT f.*, u.nome AS nome_usuario
-FROM filmes f
-LEFT JOIN usuarios u ON f.usuario_id = u.id_usuario
-ORDER BY f.id_filme DESC;
-
-
-
-
-
+Servidor: GlassFish
