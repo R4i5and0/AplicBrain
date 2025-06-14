@@ -1,5 +1,7 @@
 DROP DATABASE IF EXISTS brain;
+
 CREATE DATABASE brain;
+
 USE brain;
 
 
