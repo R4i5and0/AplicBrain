@@ -1,0 +1,455 @@
+/* style.css - AplicBrain - Conceito Dreamcore */
+
+/*
+----------------------------------------------------------------------------------------------------
+                                            PALETA DE CORES DO PROJETO
+----------------------------------------------------------------------------------------------------
+*/
+/* #14041c (Roxo Escuro Profundo) */
+/* #ee92b2 (Rosa Etéreo Vibrante) */
+/* #c74fac (Magenta/Roxo Profundo) */
+/* #0c0414 (Preto Arroxeado Ultra Profundo) */
+/* #446cd4 (Azul Cósmico Médio) */
+/* COR PARA CARDS: rgba(23, 4, 55, 0.7) (Roxo Escuro Opaco com transparência) */
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    *** RESET GLOBAL AGRESSIVO PARA CONTORNOS DE FOCO ***
+----------------------------------------------------------------------------------------------------
+*/
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important; /* Para garantir que nenhuma borda colorida apareça no foco */
+}
+/* FIM DO RESET GLOBAL AGRESSIVO */
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    1. RESET E ESTILOS GLOBAIS DA PÁGINA (BODY/HTML)
+----------------------------------------------------------------------------------------------------
+*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace !important;
+    color: #ee92b2; /* Mantido conforme seu original, ou Bootstrap se estiver em index-body/text-white */
+    min-height: 100vh; /* Mantido seu original para garantir que a viewport seja coberta */
+    overflow-x: hidden; /* Mantido seu original */
+    position: relative; /* Mantido seu original */
+    
+    /* === MUDANÇAS ESSENCIAIS PARA O STICKY FOOTER === */
+    display: flex; /* Transforma o body em um container flexível */
+    flex-direction: column; /* Organiza os itens (navbar, content-wrapper, footer) em coluna */
+}
+
+/* NOVO: Classe para o wrapper do conteúdo principal para empurrar o footer */
+.content-wrapper {
+    flex-grow: 1; /* Faz esta div crescer e ocupar todo o espaço restante disponível, empurrando o footer */
+    /* Você pode adicionar um padding-bottom aqui se o footer for muito grande e puder sobrepor o conteúdo.
+       Ex: padding-bottom: 80px; */
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    2. ESTILOS DE FUNDO E EFEITOS VISUAIS
+----------------------------------------------------------------------------------------------------
+*/
+
+/* Estilo para o corpo da página inicial (index.jsp) com imagem de fundo. */
+.index-body {
+    background: url('../img/sugestão.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh; /* Mantido conforme seu original */
+    position: relative; /* Mantido conforme seu original */
+    overflow-x: hidden; /* Mantido conforme seu original */
+    overflow-y: auto; /* Mantido conforme seu original */
+    z-index: 0; /* Mantido conforme seu original */
+}
+
+/* Efeito de sobreposição suave para o fundo. */
+.index-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 4, 20, 0.3); /* Um leve véu do preto arroxeado */
+    z-index: -1;
+}
+
+/* Estilo específico para a página de listar filmes, aplicando o mesmo fundo. */
+body.listar-filmes-page {
+    background: url('../img/sugestão.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.index-body main.container {
+    background-color: transparent !important; /* Torna o fundo transparente */
+    border-radius: 0 !important;             /* Remove o arredondamento */
+    box-shadow: none !important;             /* Remove qualquer sombra */
+    backdrop-filter: none !important;        /* Remove desfoque (se houver) */
+    
+    /* Mantenha o padding e as margens se quiser que o conteúdo principal ainda tenha espaço. */
+    /* Caso contrário, descomente e use 0 para removê-los. */
+    padding: 2rem; /* Mantenha o padding original se for para o conteúdo do texto */
+    margin-top: 50px; /* Mantenha a margem superior se for para a separação */
+    margin-bottom: 50px; /* Mantenha a margem inferior se for para a separação */
+}
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    3. ESTILOS DA BARRA DE NAVEGAÇÃO (NAVBAR)
+----------------------------------------------------------------------------------------------------
+*/
+
+/* Estilos gerais da barra de navegação. */
+.navbar {
+    background-color: #0c0414 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', Courier, monospace !important;
+    /* REMOVIDO: flex-shrink: 0; (Não é estritamente necessário aqui e foi uma das coisas que mexi sem precisar) */
+}
+
+/* Estilos para a lista de itens dentro da barra de navegação. */
+.navbar .navbar-collapse .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Estilos para os links de navegação e o logo/título da marca. */
+.nav-link, .navbar-brand {
+    color: #ee92b2 !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* Efeito ao passar o mouse sobre os links da navbar. */
+.nav-link:hover {
+    color: #446cd4 !important;
+}
+
+/* === RESTAURADO: Botões da Navbar. Retornado ao seu código ORIGINAL. === */
+.navbar-nav .nav-item .btn {
+    border: none !important;
+    outline: none !important;
+    /* SEM PROPRIEDADES AQUI QUE DUPLIQUEM O .btn principal, apenas anulação de bordas/outlines */
+}
+
+/* === RESTAURADO: Estados de hover/focus para os botões da navbar. Retornado ao seu código ORIGINAL. === */
+.navbar-nav .nav-item .btn:hover,
+.navbar-nav .nav-item .btn:focus,
+.navbar-nav .nav-item .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                            4. ESTILOS DE BOTÕES
+----------------------------------------------------------------------------------------------------
+*/
+
+/* === RESTAURADO: Estilos gerais para todos os botões que usam a classe 'btn'. Retornado ao seu código ORIGINAL. === */
+.btn {
+    background: linear-gradient(45deg, #14041c, #c74fac) !important;
+    color: #fff !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 15px rgba(199, 79, 172, 0.7) !important;
+    transition: all 0.3s ease-in-out !important;
+    font-weight: bold !important;
+    padding: 12px 25px !important;
+    cursor: pointer !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* === RESTAURADO: Efeito ao passar o mouse sobre os botões. Retornado ao seu código ORIGINAL. === */
+.btn:hover {
+    background: linear-gradient(45deg, #446cd4, #c74fac) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 25px rgba(68, 108, 212, 0.9) !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff !important;
+}
+
+/* === RESTAURADO: Remove o contorno de foco e sombra de foco para os botões. Retornado ao seu código ORIGINAL. === */
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+
+/* === RESTAURADO: ESTILOS ESPECÍFICOS PARA OS BOTÕES GLOW-BUTTON. Retornado ao seu código ORIGINAL. === */
+.glow-button {
+    box-shadow: 0 0 10px #446cd4, 0 0 20px #446cd4 !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff !important;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 20px #446cd4, 0 0 30px #446cd4 !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff !important;
+}
+
+/* === RESTAURADO: Remove o contorno de foco e sombra de foco para glow-buttons. Retornado ao seu código ORIGINAL. === */
+.glow-button:focus,
+.glow-button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                            5. TIPOGRAFIA E TÍTULOS
+----------------------------------------------------------------------------------------------------
+*/
+/* MANTIDO SEU ORIGINAL */
+h1, h2, h3 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(68, 108, 212, 0.5), 0 0 20px rgba(68, 108, 212, 0.3);
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 3rem;
+    line-height: 1.4;
+}
+
+
+.typing {
+    font-family: 'Courier New', Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif !important;
+    animation: floatCosmic 3s infinite ease-in-out alternate;
+    
+}
+
+.index-text {
+    font-size: 1.3rem;
+    color: #ffffff;
+    max-width: 900px;
+    line-height: 1.9;
+    padding: 1rem;
+    margin: 2rem auto;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px #ee92b2, 0 0 20px #ee92b2, 0 0 30px #e0dfff;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                            6. ANIMAÇÕES
+----------------------------------------------------------------------------------------------------
+*/
+
+/* MANTIDO SEU ORIGINAL */
+@keyframes floatCosmic {
+    from { transform: translateY(-5px); }
+    to { transform: translateY(5px); }
+}
+
+/* Estilos para estrelas animadas com CSS puro. */
+.stars {
+    position: fixed; /* MANTIDO SEU ORIGINAL */
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* MANTIDO ESSA ALTERAÇÃO para garantir que fique no fundo */
+    background: transparent;
+    pointer-events: none;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.stars::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow:
+        10vw 20vh #fff, 30vw 80vh #fff, 50vw 10vh #fff,
+        70vw 60vh #fff, 90vw 30vh #fff, 20vw 90vh #fff,
+        40vw 70vh #fff, 60vw 50vh #fff, 80vw 40vh #fff;
+    animation: twinkle 4s ease-in-out infinite, floatCosmic 3s infinite ease-in-out alternate;
+}
+
+/* MANTIDO SEU ORIGINAL */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* MANTIDO SEU ORIGINAL */
+@keyframes moveBackground {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    7. ESTRUTURA PRINCIPAL DO CONTEÚDO
+----------------------------------------------------------------------------------------------------
+*/
+/* MANTIDO SEU ORIGINAL */
+.main-content-area {
+    flex-grow: 1; /* MANTIDO, pois você já tinha e está em linha com o content-wrapper */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* MANTIDO SEU ORIGINAL */
+main.container {
+    background-color: rgba(12, 4, 20, 0.6);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                    8. ESTILOS DE COMPONENTES ESPECÍFICOS
+----------------------------------------------------------------------------------------------------
+*/
+/* MANTIDO SEU ORIGINAL */
+.filmes-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.filme-grid-item {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    flex: 0 0 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.card.filme-card-dreamcore {
+    background-color: rgba(23, 4, 55, 0.7) !important;
+    border: 1px solid #c74fac !important;
+    color: #fff !important;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.card-buttons-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.card-description {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.card-text, .card-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* MANTIDO SEU ORIGINAL */
+.card-body {
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*
+----------------------------------------------------------------------------------------------------
+                                            9. RODAPÉ (FOOTER)
+----------------------------------------------------------------------------------------------------
+*/
+
+/* Estilos gerais do rodapé. */
+footer {
+    background-color: #0c0414; /* Preto Arroxeado Ultra Profundo para o Footer. */
+    color: #ee92b2; /* Rosa Etéreo para o texto do Footer - Voltei para a cor da paleta! */
+    /* === MUDANÇAS ESSENCIAIS PARA O STICKY FOOTER === */
+    /* REMOVIDO: position: relative; (Não é necessário para o sticky footer com Flexbox e pode conflitar) */
+    /* REMOVIDO: z-index: 2; (Não é necessário aqui) */
+    
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace !important;
+    flex-shrink: 0; /* ADICIONADO: ESSENCIAL para o sticky footer! Impede o footer de encolher. */
+}
+
+/* MANTIDO SEU ORIGINAL */
+footer hr {
+    width: 80%;
+    margin: 0 auto 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* MANTIDO SEU ORIGINAL */
+footer p {
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* MANTIDO SEU ORIGINAL */
+footer small {
+    font-family: 'Courier New', Courier, monospace !important;
+}

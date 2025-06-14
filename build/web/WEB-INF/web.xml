@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+ 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>FormFilmeServlet</servlet-name>
+        <servlet-class>com.controller.FormFilmeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FormFilmeServlet</servlet-name>
+        <url-pattern>/FormFilmeServlet</url-pattern>
+    </servlet-mapping>
+
+   
+    <servlet>
+        <servlet-name>FilmeServlet</servlet-name>
+        <servlet-class>com.controller.FilmeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FilmeServlet</servlet-name>
+        <url-pattern>/FilmeServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
