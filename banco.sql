@@ -12,7 +12,6 @@ CREATE DATABASE brain;
 -- Seleciona o banco de dados que vamos usar.
 USE brain;
 
-
 -- ================================================================= --
 --                      CRIAÇÃO DAS TABELAS                          --
 -- ================================================================= --
@@ -56,16 +55,11 @@ CREATE TABLE musicas (
 );
 
 
-
 INSERT INTO usuarios (nome, email, senha, tipo)
 VALUES ('Administrador', 'admin@admin.com', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=' , 'admin');
 
-
-
-
 select * from usuarios;
 select * from filmes;
-
 
 --Listar usuários e quantos filmes cada um cadastrou
 SELECT u.nome AS nome_usuario, COUNT(f.id_filme) AS total_filmes
