@@ -1,44 +1,33 @@
-DROP DATABASE IF EXISTS brain;
-CREATE DATABASE brain;
-USE brain;
+# 🧠 Mente Ativa, Universo Infinito  
 
+**Projeto Web Full-Stack com Java**  
 
-CREATE TABLE usuarios (
-  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  senha VARCHAR(255) NOT NULL
-);
+Este projeto é uma aplicação web completa desenvolvida como um trabalho prático para a disciplina de **Programação Web**. Trata-se de uma plataforma interativa onde usuários podem se cadastrar, fazer login e sugerir filmes, enquanto um perfil de **administrador** gerencia todo o conteúdo. ✨  
 
+O diferencial do projeto é o seu conceito criativo, que utiliza uma estética **dreamcore** e cósmica para explorar a relação entre a arte cinematográfica.
 
+---
 
-CREATE TABLE filmes (
-  id_filme INT AUTO_INCREMENT PRIMARY KEY,
-  nome_filme VARCHAR(255) NOT NULL,
-  genero VARCHAR(100) NOT NULL,
-  nota DOUBLE,
-  descricao TEXT,
-  usuario_id INT,
-  FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario)
-);
-ALTER TABLE filmes ADD trailer_link VARCHAR(255);
+## ✨ Principais Funcionalidades  
 
+- 🔑 **Sistema de Autenticação:** Dois níveis de permissão (Admin e Usuário).  
+- 🎬 **Gerenciamento de Filmes:** Operações **CRUD** completas para adicionar, editar e remover filmes.  
+- 📽️ **Exibição de Trailers:** Visualização dinâmica de capas a partir de links do **YouTube**.  
+- 🎨 **Interface Responsiva e Temática:** Estética única para uma experiência imersiva.  
 
-CREATE TABLE musicas (
-  id_musica INT AUTO_INCREMENT PRIMARY KEY,
-  nome_musica VARCHAR(255) NOT NULL,
-  descricao TEXT,
-  usuario_id INT,
-  FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario)
-);
+---
 
-ALTER TABLE usuarios ADD tipo ENUM('admin', 'comum') DEFAULT 'comum';
-UPDATE usuarios SET tipo = 'admin' WHERE email = 'admin@admin.com';
+## 🚀 Stack Tecnológico  
 
+| Tecnologia         | Uso |
+|-------------------|------------------------------------------------|
+| **Java (Jakarta EE)** | Backend e lógica de negócio |
+| **Servlets & JSP** | Construção de páginas dinâmicas |
+| **JDBC**          | Conexão com banco de dados |
+| **HTML5 & CSS3**  | Estrutura e estilização da interface |
+| **JavaScript & Bootstrap 5** | Interatividade e responsividade |
+| **MySQL**        | Banco de dados relacional |
+| **GlassFish**    | Servidor de aplicação |
 
-INSERT INTO usuarios (nome, email, senha)
-VALUES ('Administrador', 'admin@admin.com', 'admin123');
+---
 
-DESCRIBE filmes;
-
-SELECT * FROM usuarios;
