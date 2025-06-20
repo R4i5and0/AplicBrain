@@ -44,10 +44,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav gap-2">
                         <li class="nav-item">
-                            <a class="btn btn-outline-info" href="login.jsp">Entrar</a>
+                            <a class="btn btn-outline-info" href="login.jsp"><i class="bi bi-door-open"></i> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-info" href="cadastro.jsp">Cadastrar</a>
+                            <a class="btn btn-info" href="cadastro.jsp"><i class="bi bi-door-closed"></i> Cadastrar</a>
                         </li>
                     </ul>
                 </div>

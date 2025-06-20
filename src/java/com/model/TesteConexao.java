@@ -4,10 +4,7 @@
  */
 package com.model;
 
-/**
- *
- * @author Raissa
- */
+
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
@@ -19,7 +16,7 @@ public class TesteConexao {
             JOptionPane.showMessageDialog(null, "✅ Conexão com o banco de dados estabelecida com sucesso!");
             conn.close();
         } catch (Exception e) {
-            JOptionPane.showInputDialog("❌ Erro ao conectar com o banco de dados:");
-        }
+           JOptionPane.showMessageDialog(null, "❌ Erro ao conectar com o banco de dados:");
+    }
     }
 }

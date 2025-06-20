@@ -45,7 +45,7 @@
                         <ul class="navbar-nav ms-auto align-items-center">
 
                             <li class="nav-item">
-                                <a class="btn btn-outline-info ms-2" href="${pageContext.request.contextPath}/FilmeServlet?action=listar">Filmes</a>
+                                <a class="btn btn-outline-info ms-2" href="${pageContext.request.contextPath}/FilmeServlet?action=listar"><i class="bi bi-camera-reels"></i> Filmes</a>
                             </li>
 
                             <%-- Botões específicos para o tipo de usuário --%>
@@ -57,7 +57,7 @@
 
                             <li class="nav-item">
                                 <a class="btn btn-outline-danger ms-2" href="index.jsp">
-                                    <i class="bi bi-box-arrow-right"></i> Sair
+                                    <i class="bi bi-box-arrow-left"></i> Sair
                                 </a>
                             </li>
                         </ul>

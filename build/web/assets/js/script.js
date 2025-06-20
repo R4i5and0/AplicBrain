@@ -27,7 +27,7 @@ function initStarryBackground() {
     
     
 
-    const starCount = 150; // Quantidade de estrelas
+    const starCount = 190; // Quantidade de estrelas
     const colors = ['#ff99ff', '#cc66ff', '#9966ff', '#66ccff', '#ffffff'];
 
     for (let i = 0; i < starCount; i++) {

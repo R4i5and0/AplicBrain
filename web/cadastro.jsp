@@ -4,19 +4,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastro | Meu Cérebro, Meu Universo</title> <%-- Título mais completo --%>
-        
+
         <%-- Bootstrap CSS --%>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        
+
         <%-- Bootstrap Icons CSS (ADICIONADO/CONFIRMADO - Essencial para o ícone do olho) --%>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        
+
         <%-- Seu CSS Personalizado --%>
         <link rel="stylesheet" href="assets/css/style.css">
-        
+
         <%-- Ícone do Site --%>
         <link rel="shortcut icon" href="assets/img/icone.jpg"/>
-        
+
         <%-- SEU CÓDIGO SCRIPT.JS ESTÁ DEFER, OK --%>
         <%-- <script src="assets/js/script.js" defer></script> --%> 
 
@@ -48,8 +48,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="btn btn-success fw-bold" href="index.jsp">Início</a></li>
-                        <li class="nav-item"><a class="btn btn-success fw-bold" href="login.jsp">Entrar</a></li>
+                        <li class="nav-item"><a class="btn btn-success fw-bold" href="index.jsp"><i class="bi bi-camera-reels"></i> Início</a></li>
+                        <li class="nav-item"><a class="btn btn-success fw-bold" href="login.jsp"><i class="bi bi-door-open"></i> Entrar</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                 </p>
             </div>
         </div>
-        
+
         <footer class="text-center text-light py-3 mt-auto">
             <hr class="bg-light">
             <p class="mb-1">🧬 <em>Sabia que uma lembrança cinematográfica pode ativar mais áreas do cérebro do que qualquer outro estímulo?</em></p>
@@ -101,16 +101,16 @@
 
         <%-- SCRIPTS JAVASCRIPT (colocados no final do body para melhor performance) --%>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        
+
         <%-- SCRIPT DO OLHINHO DA SENHA - DIRETO NO JSP --%>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const senhaInput = document.getElementById('senha');
                 const togglePasswordIcon = document.getElementById('togglePassword');
 
                 // Verifica se ambos os elementos existem antes de adicionar o evento
                 if (senhaInput && togglePasswordIcon) {
-                    togglePasswordIcon.addEventListener('click', function() {
+                    togglePasswordIcon.addEventListener('click', function () {
                         // Alterna o tipo do input: de 'password' para 'text' e vice-versa
                         const type = senhaInput.getAttribute('type') === 'password' ? 'text' : 'password';
                         senhaInput.setAttribute('type', type);
@@ -125,5 +125,5 @@
         <%-- Se você tem outros scripts em assets/js/script.js e ainda quer usá-los, mantenha a linha abaixo.
              Se não, pode remover para não carregar um arquivo vazio ou desnecessário. --%>
         <%-- <script src="assets/js/script.js" defer></script> --%>
-    </body>
+         </body>
 </html>

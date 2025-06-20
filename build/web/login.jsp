@@ -52,8 +52,8 @@
             <a class="navbar-brand fw-bold glow-text" href="index.jsp">🧠 Mente ativa, universo infinito.</a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="btn btn-outline-light" href="index.jsp">Início</a></li> <%-- Mudei para outline para combinar com o "Cadastrar" --%>
-                    <li class="nav-item"><a class="btn btn-info" href="cadastro.jsp">Cadastrar</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light" href="index.jsp"><i class="bi bi-emoji-sunglasses"></i> Início</a></li> <%-- Mudei para outline para combinar com o "Cadastrar" --%>
+                    <li class="nav-item"><a class="btn btn-info bi bi-door-closed" href="cadastro.jsp"> Cadastrar</a></li>
                 </ul>
             </div>
         </div>
