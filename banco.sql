@@ -61,14 +61,6 @@ VALUES ('Administrador', 'admin@admin.com', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCK
 select * from usuarios;
 select * from filmes;
 
---Listar usuários e quantos filmes cada um cadastrou
-SELECT u.nome AS nome_usuario, COUNT(f.id_filme) AS total_filmes
-FROM usuarios u
-LEFT JOIN filmes f ON u.id_usuario = f.usuario_id
-GROUP BY u.id_usuario, u.nome;
-
-
-
 
 
 SELECT f.*, u.nome AS nome_usuario
