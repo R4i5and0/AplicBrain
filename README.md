@@ -31,14 +31,14 @@ O diferencial do projeto é o seu conceito criativo, que utiliza uma estética *
 
 ---
 
-
 ## 📊 Status do Projeto  
 Projeto concluído em **junho de 2025**. ✔️
 
 ---
 
-## 🎥 Demonstração em Vídeo  
+## 🎥 Apresentação Conceitual  
 
-Como o projeto utiliza tecnologias de servidor (Servlets e JSP), não é possível hospedá-lo diretamente no GitHub Pages. Por isso, preparei uma demonstração em vídeo para mostrar o funcionamento completo da aplicação:
+Este vídeo apresenta a ideia central do projeto, sua estética **dreamcore cósmica**, e como a plataforma funciona na prática. 
+É uma forma de explorar o universo visual e narrativo que inspirou o desenvolvimento da aplicação:
 
 [![Assista ao vídeo](https://img.youtube.com/vi/fLLkTPcQDjA/0.jpg)](https://www.youtube.com/watch?v=fLLkTPcQDjA)
