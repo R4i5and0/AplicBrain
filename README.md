@@ -31,3 +31,14 @@ O diferencial do projeto é o seu conceito criativo, que utiliza uma estética *
 
 ---
 
+
+## 📊 Status do Projeto  
+Projeto concluído em **junho de 2025**. ✔️
+
+---
+
+## 🎥 Demonstração em Vídeo  
+
+Como o projeto utiliza tecnologias de servidor (Servlets e JSP), não é possível hospedá-lo diretamente no GitHub Pages. Por isso, preparei uma demonstração em vídeo para mostrar o funcionamento completo da aplicação:
+
+[![Assista ao vídeo](https://img.youtube.com/vi/fLLkTPcQDjA/0.jpg)](https://www.youtube.com/watch?v=fLLkTPcQDjA)
